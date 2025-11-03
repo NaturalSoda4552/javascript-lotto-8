@@ -13,13 +13,40 @@ class App {
   }
 
   async run() {
-    const purchaseAmount = await this.#inputView.inputPurchaseAmount();
+    let purchaseAmount;
+    let winningNumbers;
+    let bonusNumber;
 
+    while (true) {
+      try {
+        purchaseAmount = await this.#inputView.inputPurchaseAmount();
+
+        break;
+      } catch (error) {
+        this.#outputView.printError(error);
+      }
+    }
     const lottoGame = new LottoGame(purchaseAmount);
     this.#outputView.printLottos(lottoGame.getLottos());
 
-    const winningNumbers = await this.#inputView.inputWinningNumbers();
-    const bonusNumber = await this.#inputView.inputBonusNumber();
+    while (true) {
+      try {
+        winningNumbers = await this.#inputView.inputWinningNumbers();
+
+        break;
+      } catch (error) {
+        this.#outputView.printError(error);
+      }
+    }
+    while (true) {
+      try {
+        bonusNumber = await this.#inputView.inputBonusNumber();
+
+        break;
+      } catch (error) {
+        this.#outputView.printError(error);
+      }
+    }
 
     const winningLotto = new WinningLotto(winningNumbers, bonusNumber);
     const winningStatistics = lottoGame.createWinningStatistics(winningLotto);

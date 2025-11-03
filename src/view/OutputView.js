@@ -17,7 +17,7 @@ class OutputView {
   }
 
   printWinningStatistics(winningStatistics) {
-    Console.print('당첨 통계\n---\n');
+    Console.print('\n당첨 통계\n---');
 
     const rankCounts = winningStatistics.getRankCounts();
     const ranks = [5, 4, 3, 2, 1].forEach((rank) => {
@@ -28,6 +28,10 @@ class OutputView {
 
     const profitRate = winningStatistics.getProfitRate();
     Console.print(`총 수익률은 ${profitRate}%입니다.`);
+  }
+
+  printError(error) {
+    Console.print(error.message);
   }
 }
 
