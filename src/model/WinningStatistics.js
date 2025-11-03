@@ -26,7 +26,7 @@ class WinningStatistics {
   }
 
   getRankCounts() {
-    return this.#rankCounts;
+    return { ...this.#rankCounts };
   }
 }
 

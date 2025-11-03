@@ -47,7 +47,7 @@ class LottoGame {
   }
 
   getLottos() {
-    return this.#lottos;
+    return [...this.#lottos];
   }
 }
 

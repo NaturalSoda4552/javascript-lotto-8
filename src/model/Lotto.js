@@ -29,7 +29,7 @@ class Lotto {
     return `[${this.#numbers.join(', ')}]`;
   }
   getNumbers() {
-    return this.#numbers;
+    return [...this.#numbers];
   }
 }
 
