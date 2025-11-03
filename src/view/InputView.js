@@ -1,9 +1,10 @@
 import { Console } from '@woowacourse/mission-utils';
+import { MESSAGES } from '../constants/lottoConstants.js';
 
 class InputView {
   async inputPurchaseAmount() {
     const purchaseAmount = await Console.readLineAsync(
-      '구입금액을 입력해 주세요. \n',
+      MESSAGES.INPUT_PURCHASE_AMOUNT,
     );
     const amount = Number(purchaseAmount);
 
@@ -12,7 +13,7 @@ class InputView {
 
   async inputWinningNumbers() {
     const winningNumbers = await Console.readLineAsync(
-      '당첨 번호를 입력해 주세요. \n',
+      MESSAGES.INPUT_WINNING_NUMBERS,
     );
     const numbers = winningNumbers.split(',').map(Number);
 
@@ -21,7 +22,7 @@ class InputView {
 
   async inputBonusNumber() {
     const bonusNumber = await Console.readLineAsync(
-      '보너스 번호를 입력해 주세요. \n',
+      MESSAGES.INPUT_BONUS_NUMBER,
     );
     const number = Number(bonusNumber);
 

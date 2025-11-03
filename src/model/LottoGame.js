@@ -2,6 +2,7 @@ import { Random } from '@woowacourse/mission-utils';
 
 import Lotto from './Lotto.js';
 import WinningStatistics from './WinningStatistics.js';
+import { RANK } from '../constants/lottoConstants.js';
 
 class LottoGame {
   #purchaseAmount;
@@ -28,16 +29,16 @@ class LottoGame {
 
   createWinningStatistics(winningLotto) {
     const rankCounts = {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-      5: 0,
+      [RANK.FIRST]: 0,
+      [RANK.SECOND]: 0,
+      [RANK.THIRD]: 0,
+      [RANK.FOURTH]: 0,
+      [RANK.FIFTH]: 0,
     };
 
     this.#lottos.forEach((lotto) => {
       const rank = winningLotto.match(lotto);
-      if (rank !== 0) {
+      if (rank !== RANK.NO_PRIZE) {
         rankCounts[rank]++;
       }
     });
