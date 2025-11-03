@@ -6,8 +6,8 @@ class WinningLotto {
 
   constructor(winningNumbers, bonusNumber) {
     this.#validate(winningNumbers, bonusNumber);
+    winningNumbers.sort((a, b) => a - b);
     this.#winningNumberLotto = new Lotto(winningNumbers);
-    this.#winningNumberLotto.sort((a, b) => a - b);
     this.#bonusNumber = bonusNumber;
   }
 

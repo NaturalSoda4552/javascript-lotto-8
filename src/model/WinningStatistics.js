@@ -1,4 +1,4 @@
-PRIZE_MONEY = Object.freeze({
+const PRIZE_MONEY = Object.freeze({
   1: 2000000000,
   2: 30000000,
   3: 1500000,
@@ -16,7 +16,7 @@ class WinningStatistics {
   }
 
   getTotalPrize() {
-    const totalPrize = 0;
+    let totalPrize = 0;
     for (const rank in this.#rankCounts) {
       if (this.#rankCounts[rank] > 0 && PRIZE_MONEY[rank]) {
         totalPrize += PRIZE_MONEY[rank] * this.#rankCounts[rank];
@@ -32,3 +32,5 @@ class WinningStatistics {
     return Math.round(profitRate * 10) / 10;
   }
 }
+
+export default WinningStatistics;

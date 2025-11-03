@@ -22,6 +22,7 @@ class App {
     const bonusNumber = await this.#inputView.inputBonusNumber();
 
     const winningLotto = new WinningLotto(winningNumbers, bonusNumber);
+    const winningStatistics = lottoGame.createWinningStatistics(winningLotto);
   }
 }
 
