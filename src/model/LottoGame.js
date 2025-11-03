@@ -39,7 +39,7 @@ class LottoGame {
     this.#lottos.forEach((lotto) => {
       const rank = winningLotto.match(lotto);
       if (rank !== RANK.NO_PRIZE) {
-        rankCounts[rank]++;
+        rankCounts[rank] += 1;
       }
     });
 
