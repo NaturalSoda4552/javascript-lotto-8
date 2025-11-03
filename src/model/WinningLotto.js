@@ -1,19 +1,10 @@
-import Lotto from './Lotto.js';
-
 class WinningLotto {
   #winningNumberLotto;
   #bonusNumber;
 
-  constructor(winningNumbers, bonusNumber) {
-    this.#validate(winningNumbers, bonusNumber);
-    winningNumbers.sort((a, b) => a - b);
-    this.#winningNumberLotto = new Lotto(winningNumbers);
+  constructor(winningNumberLotto, bonusNumber) {
+    this.#winningNumberLotto = winningNumberLotto;
     this.#bonusNumber = bonusNumber;
-  }
-
-  #validate(winningNumbers, bonusNumber) {
-    if (winningNumbers.includes(bonusNumber))
-      throw new Error('[ERROR] 보너스 번호는 당첨 번호와 중복될 수 없습니다.');
   }
 
   match(lotto) {

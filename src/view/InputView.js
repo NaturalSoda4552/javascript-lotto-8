@@ -1,20 +1,11 @@
 import { Console } from '@woowacourse/mission-utils';
 
-import Validator from '../utils/Validator.js';
-
 class InputView {
-  #validator;
-
-  constructor() {
-    this.#validator = new Validator();
-  }
-
   async inputPurchaseAmount() {
     const purchaseAmount = await Console.readLineAsync(
       '구입금액을 입력해 주세요. \n',
     );
     const amount = Number(purchaseAmount);
-    this.#validator.validatePurchaseAmount(amount);
 
     return amount;
   }
@@ -24,7 +15,6 @@ class InputView {
       '당첨 번호를 입력해 주세요. \n',
     );
     const numbers = winningNumbers.split(',').map(Number);
-    this.#validator.validateWinningNumbers(numbers);
 
     return numbers;
   }
@@ -34,7 +24,6 @@ class InputView {
       '보너스 번호를 입력해 주세요. \n',
     );
     const number = Number(bonusNumber);
-    this.#validator.validateBonusNumber(number);
 
     return number;
   }
