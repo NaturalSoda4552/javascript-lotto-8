@@ -20,8 +20,13 @@ describe('Lotto 클래스 테스트', () => {
         expectedError: ERROR_MESSAGES.DUPLICATE_WINNING_NUMBERS,
       },
       {
-        description: '번호에 정수가 아닌 값이 있을 때',
+        description: '번호에 문자가 있을 때',
         input: [1, 2, 3, 4, 5, 'a'],
+        expectedError: ERROR_MESSAGES.WINNING_NUMBERS_MUST_BE_INTEGER,
+      },
+      {
+        description: '번호에 실수가 있을 때',
+        input: [1, 2, 3, 4, 5, 6.6],
         expectedError: ERROR_MESSAGES.WINNING_NUMBERS_MUST_BE_INTEGER,
       },
       {
