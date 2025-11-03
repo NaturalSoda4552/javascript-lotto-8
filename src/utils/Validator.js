@@ -14,8 +14,8 @@ class Validator {
       throw new Error(ERROR_MESSAGES.OUT_OF_RANGE_BONUS_NUMBER);
     }
   }
-  validateWinningNumbersAndBonusNumber(winningNumbers, bonusNumber) {
-    if (winningNumbers.includes(bonusNumber))
+  validateWinningNumbersAndBonusNumber(winningNumberLotto, bonusNumber) {
+    if (winningNumberLotto.getNumbers().includes(bonusNumber))
       throw new Error(
         ERROR_MESSAGES.DUPLICATE_WINNING_NUMBERS_AND_BONUS_NUMBER,
       );

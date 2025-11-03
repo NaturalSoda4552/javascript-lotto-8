@@ -18,10 +18,7 @@ class App {
 
   async run() {
     let purchaseAmount;
-
-    let winningNumbers;
     let winningNumberLotto;
-
     let bonusNumber;
 
     while (true) {
@@ -39,7 +36,7 @@ class App {
 
     while (true) {
       try {
-        winningNumbers = await this.#inputView.inputWinningNumbers();
+        let winningNumbers = await this.#inputView.inputWinningNumbers();
         winningNumberLotto = new Lotto(winningNumbers);
 
         break;
@@ -52,7 +49,7 @@ class App {
         bonusNumber = await this.#inputView.inputBonusNumber();
         this.#validator.validateBonusNumber(bonusNumber);
         this.#validator.validateWinningNumbersAndBonusNumber(
-          winningNumbers,
+          winningNumberLotto,
           bonusNumber,
         );
 
