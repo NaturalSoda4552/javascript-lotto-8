@@ -31,6 +31,10 @@ class WinningStatistics {
     const profitRate = (totalPrize / this.#purchaseAmount) * 100;
     return Math.round(profitRate * 10) / 10;
   }
+
+  getRankCounts() {
+    return this.#rankCounts;
+  }
 }
 
 export default WinningStatistics;

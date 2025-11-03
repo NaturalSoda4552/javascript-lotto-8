@@ -23,6 +23,7 @@ class App {
 
     const winningLotto = new WinningLotto(winningNumbers, bonusNumber);
     const winningStatistics = lottoGame.createWinningStatistics(winningLotto);
+    this.#outputView.printWinningStatistics(winningStatistics);
   }
 }
 
